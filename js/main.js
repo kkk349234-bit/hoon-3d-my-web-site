@@ -21,18 +21,6 @@ const PROJECTS = {
   },
 };
 
-// 스크롤 등장 애니메이션
-const io = new IntersectionObserver(
-  (entries) => entries.forEach((e) => {
-    if (e.isIntersecting) {
-      e.target.classList.add('is-in');
-      io.unobserve(e.target);
-    }
-  }),
-  { threshold: 0.15 }
-);
-document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
-
 // 프로젝트 뷰어
 const viewer = document.querySelector('.viewer');
 const gallery = viewer.querySelector('.viewer__gallery');
@@ -55,8 +43,8 @@ function openProject(key) {
   viewer.scrollTop = 0;
 }
 
-document.querySelectorAll('.project').forEach((el) => {
-  el.addEventListener('click', () => openProject(el.dataset.project));
+document.querySelectorAll('.pill').forEach((btn) => {
+  btn.addEventListener('click', () => openProject(btn.dataset.project));
 });
 viewer.querySelector('.viewer__close').addEventListener('click', () => viewer.close());
 // 바깥(backdrop) 클릭 시 닫기
@@ -66,5 +54,3 @@ viewer.addEventListener('click', (e) => {
   if (outside) viewer.close();
 });
 viewer.addEventListener('close', () => gallery.querySelectorAll('video').forEach((v) => v.pause()));
-
-document.getElementById('year').textContent = new Date().getFullYear();

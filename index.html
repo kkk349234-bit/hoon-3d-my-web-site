@@ -3,106 +3,92 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Kim Sang Hoon — 3D · AI Design</title>
-  <meta name="description" content="Kim Sang Hoon, 3D · AI 디자이너 포트폴리오. Modeling, Rendering, Editing, Animation." />
-  <meta property="og:title" content="Kim Sang Hoon — 3D · AI Design" />
-  <meta property="og:description" content="Visualizing ideas. From concept to creation." />
+  <title>Kim sang hoon — 3D . AI Design</title>
+  <meta name="description" content="Kim sang hoon, 3D · AI 디자이너 포트폴리오. Modeling, Rendering, Editing, Animation." />
+  <meta property="og:title" content="Kim sang hoon — 3D . AI Design" />
   <meta property="og:image" content="assets/images/hero.jpg" />
-  <meta name="theme-color" content="#0a0a0a" />
+  <meta name="theme-color" content="#090909" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <header class="site-header">
-    <a class="logo" href="#top" aria-label="Kim Sang Hoon 홈">
-      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
-        <path d="M3 3h3M3 3v18M3 21h3M21 3h-3M21 3v18M21 21h-3M9 6v12M15 6v12M9 12h6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" />
-      </svg>
-    </a>
-    <nav class="nav">
-      <a href="#portfolio">[portfolio]</a>
-      <a href="#info">[info]</a>
-    </nav>
-  </header>
+  <div class="page" id="top">
+    <div class="frame">
+      <header class="site-header">
+        <a class="logo" href="#top" aria-label="Home">
+          <svg viewBox="0 0 14 14" aria-hidden="true">
+            <path d="M1.5 1v12M1.5 1h2M1.5 13h2M12.5 1v12M12.5 1h-2M12.5 13h-2M5 3.5v7M9 3.5v7M5 7h4" fill="none" stroke="currentColor" stroke-width="2" />
+          </svg>
+        </a>
+        <nav class="nav">
+          <a href="#portfolio">[portfolio]</a>
+          <a href="#info">[info]</a>
+        </nav>
+      </header>
 
-  <main id="top">
-    <!-- HERO -->
-    <section class="hero">
-      <img class="hero__bg" src="assets/images/hero.jpg" alt="" />
-      <div class="hero__shade"></div>
-      <div class="hero__text">
-        <h1 class="hero__title">
-          <span class="reveal">Kim sang hoon</span>
-          <span class="reveal" style="--d:.12s">3D . AI Design</span>
-        </h1>
-        <ul class="hero__skills">
-          <li class="reveal" style="--d:.3s">Modeling</li>
-          <li class="reveal" style="--d:.38s">Rendering</li>
-          <li class="reveal" style="--d:.46s">Editing</li>
-          <li class="reveal" style="--d:.54s">Animation</li>
+      <!-- HERO -->
+      <section class="hero">
+        <img src="assets/images/hero.jpg" alt="" />
+        <div class="hero__text">
+          <h1>Kim sang hoon<br />3D . AI Design</h1>
+          <p>Modeling<br />Rendering<br />Editing<br />Animation</p>
+        </div>
+      </section>
+
+      <!-- TOOLS -->
+      <section class="tools" aria-label="Tools">
+        <ul>
+          <li><img src="assets/icons/3dsmax.png" alt="" /><span>3ds Max</span></li>
+          <li><img src="assets/icons/blender.png" alt="" /><span>Blender</span></li>
+          <li><img src="assets/icons/fusion.png" alt="" /><span>Autodesk Fusion</span></li>
+          <li><img src="assets/icons/aftereffects.png" alt="" /><span>After Effects</span></li>
+          <li><img src="assets/icons/photoshop.png" alt="" /><span>Photoshop</span></li>
+          <li><img src="assets/icons/comfyui.png" alt="" /><span>ComfyUI</span></li>
+          <li><img src="assets/icons/claude.png" alt="" /><span>Claude</span></li>
+          <li><img src="assets/icons/higgsfield.png" alt="" /><span>Higgsfield</span></li>
         </ul>
+      </section>
+
+      <!-- PROJECTS -->
+      <div id="portfolio">
+        <section class="project project--driver">
+          <img src="assets/images/driver.jpg" alt="BLACK T 10.5 Driver" />
+          <h2>BLACK T 10.5 Driver</h2>
+          <button class="pill" type="button" data-project="driver">More view</button>
+        </section>
+
+        <div class="gap gap--1"></div>
+
+        <section class="project project--iron">
+          <img src="assets/images/iron.jpg" alt="BLACK T IRON T-1" />
+          <h2>BLACK T T-1 iron</h2>
+          <button class="pill" type="button" data-project="iron">More view</button>
+        </section>
+
+        <div class="gap gap--2"></div>
+
+        <section class="project project--sunglasses">
+          <img src="assets/images/sunglasses.jpg" alt="SUNGLASSES B4 Series" />
+          <h2>B4 Sunglasses</h2>
+          <button class="pill" type="button" data-project="sunglasses">More view</button>
+        </section>
       </div>
-      <a class="hero__scroll" href="#portfolio" aria-label="포트폴리오로 스크롤"></a>
-    </section>
 
-    <!-- TOOLS -->
-    <section class="tools" aria-label="사용 툴">
-      <ul class="tools__list">
-        <li><img src="assets/icons/3dsmax.png" alt="3ds Max" title="3ds Max" /></li>
-        <li><img src="assets/icons/blender.png" alt="Blender" title="Blender" /></li>
-        <li><img src="assets/icons/fusion.png" alt="Fusion" title="Fusion" /></li>
-        <li><img src="assets/icons/aftereffects.png" alt="After Effects" title="After Effects" /></li>
-        <li><img src="assets/icons/photoshop.png" alt="Photoshop" title="Photoshop" /></li>
-        <li><img src="assets/icons/cinema.png" alt="Tool" title="Tool" /></li>
-        <li><img src="assets/icons/claude.png" alt="Claude" title="Claude" /></li>
-        <li><img src="assets/icons/higgsfield.png" alt="Higgsfield" title="Higgsfield" /></li>
-      </ul>
-    </section>
-
-    <!-- PROJECTS -->
-    <section id="portfolio" class="projects">
-      <article class="project reveal" data-project="driver">
-        <h2 class="project__label">BLACK T 10.5 Driver</h2>
-        <div class="project__media"><img src="assets/images/driver.jpg" alt="BLACK T 10.5 드라이버 헤드 클로즈업 렌더" loading="lazy" /></div>
-        <button class="pill" type="button">More view</button>
-      </article>
-
-      <article class="project reveal" data-project="iron" style="--focus: 0% 50%">
-        <h2 class="project__label">BLACK T T-1 iron</h2>
-        <div class="project__media"><img src="assets/images/iron.jpg" alt="BLACK T IRON T-1 아이언 두 개 렌더" loading="lazy" /></div>
-        <button class="pill" type="button">More view</button>
-      </article>
-
-      <article class="project reveal" data-project="sunglasses">
-        <h2 class="project__label">B4 Sunglasses</h2>
-        <div class="project__media"><img src="assets/images/sunglasses.jpg" alt="B4 Series 선글라스 AI 화보" loading="lazy" /></div>
-        <button class="pill" type="button">More view</button>
-      </article>
-    </section>
-
-    <!-- CLOSING / INFO -->
-    <section id="info" class="closing">
-      <ul class="closing__lines">
-        <li class="reveal">Visualizing Ideas</li>
-        <li class="reveal" style="--d:.1s">From Concept to Creation</li>
-        <li class="reveal" style="--d:.2s">Crafted in Detail</li>
-        <li class="reveal" style="--d:.3s">Beyond the Visual</li>
-      </ul>
-      <img class="closing__img reveal" style="--d:.15s" src="assets/images/closing.jpg" alt="블랙 드라이버 헤드 렌더" loading="lazy" />
-      <div class="contact reveal" style="--d:.4s">
-        <a href="mailto:hello@example.com">hello@example.com</a>
-        <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
-        <a href="https://www.behance.net/" target="_blank" rel="noopener">Behance</a>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    Design. Create. Inspire. Exploring the intersection of 3D design, motion, and visual storytelling.
-    © <span id="year">2026</span> Kim sang hoon. All rights reserved.
-  </footer>
+      <!-- CLOSING -->
+      <section class="closing" id="info">
+        <ul>
+          <li>Visualizing Ideas</li>
+          <li>From Concept to Creation</li>
+          <li>Crafted in Detail</li>
+          <li>Beyond the Visual</li>
+        </ul>
+        <img src="assets/images/closing.jpg" alt="" />
+        <footer>Design. Create. Inspire. Exploring the intersection of 3D design, motion, and visual storytelling. © 2026 Kim sang hoon . All rights reserved.</footer>
+      </section>
+    </div>
+  </div>
 
   <!-- PROJECT VIEWER -->
   <dialog class="viewer" aria-labelledby="viewer-title">
