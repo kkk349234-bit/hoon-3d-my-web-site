@@ -5,19 +5,19 @@ const PROJECTS = {
     title: 'BLACK T 10.5 Driver',
     meta: '3D Modeling · Rendering · 2026',
     desc: '골프 드라이버 헤드의 형태와 소재감을 표현한 제품 비주얼라이제이션.',
-    media: ['assets/images/driver.jpg', 'assets/images/closing.jpg'],
+    media: ['assets/images/driver.webp', 'assets/images/closing.webp'],
   },
   iron: {
     title: 'BLACK T T-1 Iron',
     meta: '3D Modeling · Rendering · 2026',
     desc: '두 가지 피니시의 T-1 아이언 제품 렌더링.',
-    media: ['assets/images/iron.jpg'],
+    media: ['assets/images/iron.webp'],
   },
   sunglasses: {
     title: 'B4 Series Sunglasses',
     meta: 'AI Image · Editing · 2026',
     desc: 'AI 기반 모델 화보와 제품 합성으로 제작한 선글라스 캠페인 비주얼.',
-    media: ['assets/images/sunglasses.jpg'],
+    media: ['assets/images/sunglasses.webp'],
   },
 };
 

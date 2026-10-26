@@ -75,6 +75,13 @@ ul { list-style: none; }
   overflow: hidden;
 }
 .hero > img { height: 100%; object-fit: cover; }
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 53%, rgba(0, 0, 0, .4) 66%, rgba(0, 0, 0, .76) 75%);
+}
+.hero__text { z-index: 1; }
 .hero__text {
   position: absolute;
   right: calc(39 * var(--u));
@@ -132,6 +139,46 @@ ul { list-style: none; }
 /* ---------- Projects ---------- */
 .project { position: relative; overflow: hidden; }
 .project > img { height: 100%; object-fit: cover; }
+/* 시안의 상·하단 그라데이션 (라벨·버튼 가독성) */
+.project::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.project--driver::after {
+  background: linear-gradient(180deg, rgba(0, 0, 0, .88) 0%, rgba(0, 0, 0, .88) 7%, rgba(0, 0, 0, .33) 14%, transparent 18.5%);
+}
+.project--iron::after {
+  background: linear-gradient(180deg, rgba(0, 0, 0, .25) 0%, rgba(0, 0, 0, .18) 3.5%, rgba(0, 0, 0, .08) 10.5%, transparent 17.5%);
+}
+.project--sunglasses::after {
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, .21) 0%, rgba(0, 0, 0, .14) 6%, rgba(0, 0, 0, .07) 9%, transparent 14%),
+    linear-gradient(180deg, transparent 68%, rgba(0, 0, 0, .1) 74%, rgba(0, 0, 0, .28) 80%, rgba(0, 0, 0, .4) 86%, rgba(0, 0, 0, .52) 92%);
+}
+.project h2, .pill, .b4 { z-index: 1; }
+
+.b4 {
+  position: absolute;
+  left: calc(234 * var(--u));
+  top: calc(225 * var(--u));
+  color: #1b1b1b;
+  line-height: 1;
+}
+.b4 span {
+  display: block;
+  font-weight: 600;
+  font-size: calc(15.4 * var(--u));
+  letter-spacing: -0.03em;
+}
+.b4 strong {
+  display: block;
+  margin-top: calc(6 * var(--u));
+  font-weight: 800;
+  font-size: calc(31 * var(--u));
+  letter-spacing: -0.035em;
+}
 .project--driver { height: calc(342 * var(--u)); }
 .project--iron { height: calc(343 * var(--u)); }
 .project--sunglasses { height: calc(404 * var(--u)); }
@@ -200,11 +247,12 @@ ul { list-style: none; }
   letter-spacing: -0.05em;
   line-height: calc(26.5 * var(--u));
 }
+.closing ul, .closing footer { z-index: 1; }
 .closing > img {
   position: absolute;
-  left: calc(224 * var(--u));
-  top: calc(10 * var(--u));
-  width: calc(378 * var(--u));
+  inset: 0;
+  height: 100%;
+  object-fit: cover;
 }
 .closing footer {
   position: absolute;
