@@ -247,7 +247,24 @@ ul { list-style: none; }
   letter-spacing: -0.05em;
   line-height: calc(26.5 * var(--u));
 }
-.closing ul, .closing footer { z-index: 1; }
+.closing ul, .closing .contact, .closing footer { z-index: 1; }
+.contact {
+  position: absolute;
+  left: calc(36 * var(--u));
+  top: calc(282 * var(--u));
+  padding-top: calc(12 * var(--u));
+  border-top: 1px solid #333;
+  display: flex;
+  flex-direction: column;
+  gap: max(calc(4 * var(--u)), 2px);
+  font-style: normal;
+  font-size: max(calc(8.5 * var(--u)), 10px);
+  letter-spacing: -0.02em;
+  color: #8f8f8f;
+}
+.contact span { color: #d6d6d6; }
+.contact a { transition: color .25s; }
+.contact a:hover { color: #fff; }
 .closing > img {
   position: absolute;
   inset: 0;
