@@ -39,6 +39,7 @@
   font-size: calc(32 * var(--v));
   letter-spacing: -0.02em;
   color: #f4f4f4;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, .45);
   pointer-events: none;
   z-index: 1;
   transition: opacity .3s;
@@ -162,6 +163,7 @@
   margin-right: calc(33 * var(--v));
   font-size: max(calc(26 * var(--v)), 11px);
   color: #a6a6a6;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, .6);
   white-space: nowrap;
   font-variant-numeric: tabular-nums;
 }
