@@ -11,6 +11,12 @@
   padding-top: calc(141 * var(--v));
 }
 
+/* ---------- Cover image (이미지 상세페이지) ---------- */
+.detail--image { padding-top: 0; }
+.cover img { width: 100%; height: auto; }
+.detail--image .detail__rule { margin-top: calc(49 * var(--v)); }
+.detail--image .grid { margin-top: calc(48 * var(--v)); }
+
 /* ---------- Video player ---------- */
 .player {
   position: relative;

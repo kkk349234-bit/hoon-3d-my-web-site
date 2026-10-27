@@ -27,6 +27,7 @@ assets/icons/       툴 아이콘
   `video`(mp4 경로)와 `images`(표시 순서대로) 배열을 수정
   · 썸네일은 자동으로 1:1(가로 중앙·세로 최상단 기준)로 잘려 보입니다
   · 원본을 WebP로 변환하고(긴 변 최대 2560px), 480px 정사각형 썸네일을 thumbs/에 만들어 넣습니다
+  · 영상 상세페이지는 video/poster, 이미지 상세페이지는 cover(맨 위 메인 이미지)를 지정합니다
 - 연락처: `index.html`의 `.contact` 링크 (이메일·Instagram·Behance)
 
 ## 로컬 미리보기

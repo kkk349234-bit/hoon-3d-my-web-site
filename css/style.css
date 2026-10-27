@@ -42,7 +42,12 @@ ul { list-style: none; }
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
   z-index: 10;
+  transition: background .3s;
 }
+/* 밝은 배경 위: 어두운 반투명 툴바 */
+.site-header.is-on-light { background: rgba(14, 14, 14, 0.62); }
+.site-header.is-on-light .nav a { color: #cfcfcf; }
+.site-header.is-on-light .nav a:hover { color: #fff; }
 .logo {
   position: absolute;
   left: calc(8 * var(--u));
