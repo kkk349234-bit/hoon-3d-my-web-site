@@ -95,10 +95,12 @@ renderTime();
 renderVolume();
 
 /* ---------------- Image grid ---------------- */
+// 목록·툴바용 썸네일 (thumbs/ 폴더, 480px 정사각형)
+const thumbOf = (src) => (project.thumbs ? src.replace(/([^/]+)$/, 'thumbs/$1') : src);
 const grid = document.querySelector('.grid');
 grid.append(...project.images.map((src, i) => {
   const li = document.createElement('li');
-  li.innerHTML = `<button type="button" aria-label="이미지 ${i + 1} 크게 보기"><img src="${src}" alt="" loading="lazy" /></button>`;
+  li.innerHTML = `<button type="button" aria-label="이미지 ${i + 1} 크게 보기"><img src="${thumbOf(src)}" alt="" loading="lazy" /></button>`;
   li.firstChild.addEventListener('click', () => openLightbox(i));
   return li;
 }));
@@ -113,7 +115,7 @@ let current = -1;
 
 strip.append(...project.images.map((src, i) => {
   const li = document.createElement('li');
-  li.innerHTML = `<button type="button" aria-label="이미지 ${i + 1}"><img src="${src}" alt="" loading="lazy" /></button>`;
+  li.innerHTML = `<button type="button" aria-label="이미지 ${i + 1}"><img src="${thumbOf(src)}" alt="" loading="lazy" /></button>`;
   li.firstChild.addEventListener('click', () => show(i));
   return li;
 }));

@@ -26,7 +26,7 @@ assets/icons/       툴 아이콘
 - 상세 페이지: `assets/projects/<프로젝트>/`에 파일을 넣고 `js/projects.js`의
   `video`(mp4 경로)와 `images`(표시 순서대로) 배열을 수정
   · 썸네일은 자동으로 1:1(가로 중앙·세로 최상단 기준)로 잘려 보입니다
-  · 현재 driver의 01~04는 시안에서 잘라낸 임시 이미지입니다
+  · 원본을 WebP로 변환하고(긴 변 최대 2560px), 480px 정사각형 썸네일을 thumbs/에 만들어 넣습니다
 - 연락처: `index.html`의 `.contact` 링크 (이메일·Instagram·Behance)
 
 ## 로컬 미리보기
