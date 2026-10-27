@@ -246,12 +246,16 @@
   scrollbar-width: thin;
   scrollbar-color: #555 transparent;
 }
-.lb__stage > .lb__col { min-height: 100%; }
+/* 툴바 아래 ~ 화면 최하단 사이의 정중앙에 배치. 화면보다 긴 이미지는 위 간격부터 시작해 스크롤 */
 .lb__holder {
-  padding: calc(210 * var(--v)) 0 calc(170 * var(--v));
+  --bar-h: max(calc(148 * var(--v)), 48px);
+  --gap: calc(116 * var(--v));
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: calc(var(--bar-h) + var(--gap)) 0 var(--gap);
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
 }
 .lb__img { flex: none; width: auto; max-width: none; box-shadow: 0 10px 40px rgba(0, 0, 0, .5); }
 
@@ -259,8 +263,7 @@
 .lb__bar {
   position: relative;
   margin: 0 calc(2 * var(--v)) 0 calc(10 * var(--v));
-  height: calc(148 * var(--v));
-  min-height: 48px;
+  height: max(calc(148 * var(--v)), 48px);
   padding: calc(3 * var(--v));
   border: max(calc(4 * var(--v)), 2px) solid #bebebe;
   border-radius: calc(14 * var(--v));
