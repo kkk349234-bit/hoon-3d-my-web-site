@@ -46,15 +46,13 @@ ul { list-style: none; }
 }
 .logo {
   position: absolute;
-  left: calc(5 * var(--u));
+  left: calc(8 * var(--u));
   top: calc(3 * var(--u));
-  width: calc(13 * var(--u));
-  height: calc(13 * var(--u));
-  color: #a9a9a9;
-  transition: color .25s;
+  width: calc(12 * var(--u));
+  opacity: .7;
+  transition: opacity .25s;
 }
-.logo svg { width: 100%; height: 100%; display: block; }
-.logo:hover { color: #fff; }
+.logo:hover { opacity: 1; }
 .nav {
   position: absolute;
   top: 0;
@@ -111,14 +109,14 @@ ul { list-style: none; }
 }
 .tools ul {
   display: flex;
-  gap: calc(14 * var(--u));
-  margin-left: calc(127.3 * var(--u));
+  gap: calc(12.3 * var(--u));
+  margin-left: calc(127.7 * var(--u));
   transform: translateY(calc(-1.5 * var(--u)));
 }
 .tools li { position: relative; }
 .tools img {
-  width: calc(27.3 * var(--u));
-  height: calc(27.3 * var(--u));
+  width: calc(29 * var(--u));
+  height: calc(29 * var(--u));
   transition: transform .3s cubic-bezier(.2, .7, .1, 1);
 }
 .tools span {

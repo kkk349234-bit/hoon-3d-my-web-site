@@ -17,7 +17,7 @@ assets/icons/       툴 아이콘
 
 ## 이미지 교체
 `assets/images/`의 이미지는 원본 렌더입니다. 같은 파일명으로 덮어쓰면 교체됩니다.
-툴 아이콘(`assets/icons/`)과 로고는 아직 시안에서 잘라낸 임시 이미지입니다.
+툴 아이콘은 `assets/icons/`, 로고는 `assets/logo.png`(흰색, 투명 배경)입니다.
 - 히어로: `assets/images/hero.webp` (텍스트가 오른쪽에 올라가므로 왼쪽에 피사체 배치)
 - 상세 갤러리: `js/main.js`의 `PROJECTS.*.media` 배열에 이미지·mp4 경로 추가
 - 연락처: `index.html`의 `.contact` 링크 (이메일·Instagram·Behance)
