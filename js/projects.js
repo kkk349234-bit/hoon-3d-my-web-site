@@ -4,7 +4,7 @@
 window.PROJECTS = {
   driver: {
     title: 'BLACK T 10.5 Driver',
-    video: '',
+    video: 'assets/projects/driver/video.mp4',
     poster: 'assets/projects/driver/poster.webp',
     images: [
       'assets/projects/driver/01.webp',
