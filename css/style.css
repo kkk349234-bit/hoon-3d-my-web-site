@@ -23,7 +23,6 @@ ul { list-style: none; }
 /* 시안: 캔버스 812px 중 본문 602px (74.1%) */
 .page {
   width: 74.1vw;
-  max-width: 1000px;
   margin: 0 auto;
   container-type: inline-size;
 }
@@ -204,6 +203,9 @@ ul { list-style: none; }
   color: #f2f2f2;
   font: inherit;
   font-size: calc(15 * var(--u));
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
   transition: background .25s, color .25s;
 }
@@ -266,40 +268,6 @@ ul { list-style: none; }
   color: #9a9a9a;
   transform: translateX(calc(-7 * var(--u)));
 }
-
-/* ---------- Viewer ---------- */
-.viewer {
-  width: min(1100px, calc(100% - 32px));
-  max-height: calc(100svh - 48px);
-  margin: auto;
-  padding: clamp(20px, 3vw, 36px);
-  color: var(--text);
-  background: #101010;
-  border: 1px solid #262626;
-  border-radius: 10px;
-  overflow-y: auto;
-}
-.viewer::backdrop { background: rgba(0, 0, 0, .8); backdrop-filter: blur(6px); }
-.viewer[open] { animation: viewerIn .4s cubic-bezier(.2, .7, .1, 1); }
-.viewer__head { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
-.viewer__title { font-size: clamp(20px, 2.4vw, 30px); font-weight: 500; }
-.viewer__meta { margin-top: 6px; font-size: 13px; color: #8a8a8a; }
-.viewer__close {
-  flex: none;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  border: 1px solid #262626;
-  background: transparent;
-  color: var(--text);
-  font-size: 14px;
-  cursor: pointer;
-}
-.viewer__close:hover { background: #fff; color: #000; }
-.viewer__desc { margin: 16px 0 24px; max-width: 64ch; font-size: 14px; line-height: 1.7; color: #bdbdbd; }
-.viewer__gallery { display: grid; gap: 12px; }
-.viewer__gallery img, .viewer__gallery video { width: 100%; border-radius: 4px; }
-@keyframes viewerIn { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
