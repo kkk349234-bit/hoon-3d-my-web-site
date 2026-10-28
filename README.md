@@ -42,3 +42,10 @@ npx serve .     # 또는 python3 -m http.server
 ## 배포
 **Vercel**: GitHub에 푸시 → vercel.com에서 Import Project → Framework "Other" → Deploy.
 **GitHub Pages**: 레포 Settings → Pages → Source "Deploy from a branch" → `main` / `(root)`.
+
+## 미디어 보호 (다운로드 억제)
+- `js/protect.js`: 이미지·영상 위 우클릭 메뉴와 드래그 저장 차단 (텍스트 우클릭은 허용)
+- `css/style.css`: 이미지·영상 드래그 잔상, 모바일 길게 눌러 저장, 선택 강조 억제
+- 영상: 브라우저 기본 컨트롤 없이 자체 플레이어 사용, `controlslist="nodownload"`, 화면 속 화면(PiP) 비활성화
+- `vercel.json`: `/assets/` 파일 주소를 주소창에 직접 입력해 열면 홈으로 이동, 다른 사이트에서 이미지·영상 퍼가기(핫링크) 차단, 검색엔진 이미지 색인 제외
+- 한계: 브라우저 개발자 도구·화면 캡처·캐시를 통한 추출까지 막을 수는 없습니다

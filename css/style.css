@@ -17,6 +17,13 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 img { display: block; width: 100%; }
+/* 이미지·영상 드래그·길게 눌러 저장·선택 억제 */
+img, video {
+  -webkit-user-drag: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
 a { color: inherit; text-decoration: none; }
 ul { list-style: none; }
 

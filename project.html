@@ -32,7 +32,7 @@
 
         <!-- VIDEO (영상 상세페이지) -->
         <div class="player is-paused">
-          <video playsinline preload="metadata"></video>
+          <video playsinline preload="metadata" controlslist="nodownload noplaybackrate noremoteplayback" disablepictureinpicture disableremoteplayback></video>
           <h1 class="player__title"></h1>
           <button class="player__big" type="button" aria-label="재생">
             <svg viewBox="0 0 24 24"><path d="M7 4.5v15l12.5-7.5z" /></svg>
@@ -101,5 +101,6 @@
   <script src="js/projects.js"></script>
   <script src="js/header-tone.js"></script>
   <script src="js/project.js"></script>
+  <script src="js/protect.js"></script>
 </body>
 </html>
