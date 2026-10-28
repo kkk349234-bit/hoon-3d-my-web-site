@@ -240,6 +240,8 @@
   margin: 0 auto;
   container-type: inline-size;
   --v: calc(100cqw / 1401);
+  /* 툴바 높이 — 이 값만 바꾸면 썸네일 개수와 확대 이미지 중앙 위치가 함께 맞춰집니다 */
+  --bar-h: max(calc(92 * var(--v)), 40px);
 }
 @media (max-width: 700px) { .lb__col { width: 100%; } }
 
@@ -254,7 +256,6 @@
 }
 /* 툴바 아래 ~ 화면 최하단 사이의 정중앙에 배치. 화면보다 긴 이미지는 위 간격부터 시작해 스크롤 */
 .lb__holder {
-  --bar-h: max(calc(148 * var(--v)), 48px);
   --gap: calc(116 * var(--v));
   min-height: 100vh;
   min-height: 100dvh;
@@ -269,22 +270,22 @@
 .lb__bar {
   position: relative;
   margin: 0 calc(2 * var(--v)) 0 calc(10 * var(--v));
-  height: max(calc(148 * var(--v)), 48px);
-  padding: calc(3 * var(--v));
-  border: max(calc(4 * var(--v)), 2px) solid #bebebe;
-  border-radius: calc(14 * var(--v));
+  height: var(--bar-h);
+  padding: max(calc(2 * var(--v)), 1px);
+  border: max(calc(3 * var(--v)), 2px) solid #bebebe;
+  border-radius: calc(10 * var(--v));
   background: #8b8b8b;
   overflow: hidden;
   pointer-events: auto;
 }
 .lb__strip {
   display: flex;
-  gap: calc(10 * var(--v));
+  gap: calc(6 * var(--v));
   height: 100%;
   overflow-x: auto;
   scrollbar-width: none;
   scroll-behavior: smooth;
-  padding: 0 calc(52 * var(--v));
+  padding: 0 max(calc(36 * var(--v)), 22px);
 }
 .lb__strip::-webkit-scrollbar { display: none; }
 .lb__strip li { flex: none; height: 100%; aspect-ratio: 1; }
@@ -293,7 +294,7 @@
   height: 100%;
   padding: 0;
   border: 0;
-  border-radius: calc(10 * var(--v));
+  border-radius: calc(7 * var(--v));
   overflow: hidden;
   background: #212121;
   cursor: pointer;
@@ -301,37 +302,37 @@
   transition: opacity .2s;
 }
 .lb__strip button:hover { opacity: .85; }
-.lb__strip button[aria-current="true"] { opacity: 1; box-shadow: inset 0 0 0 max(calc(3 * var(--v)), 2px) #f2f2f2; }
+.lb__strip button[aria-current="true"] { opacity: 1; box-shadow: inset 0 0 0 max(calc(2 * var(--v)), 2px) #f2f2f2; }
 .lb__strip img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 0; }
-.lb__strip button[aria-current="true"] img { padding: max(calc(3 * var(--v)), 2px); border-radius: calc(10 * var(--v)); }
+.lb__strip button[aria-current="true"] img { padding: max(calc(2 * var(--v)), 2px); border-radius: calc(7 * var(--v)); }
 
 .lb__arrow {
   position: absolute;
-  top: calc(5 * var(--v));
-  bottom: calc(5 * var(--v));
-  width: calc(42 * var(--v));
-  min-width: 18px;
+  top: calc(3 * var(--v));
+  bottom: calc(3 * var(--v));
+  width: calc(28 * var(--v));
+  min-width: 16px;
   border: 0;
-  border-radius: calc(12 * var(--v));
+  border-radius: calc(8 * var(--v));
   background: rgba(206, 206, 206, .92);
   cursor: pointer;
   transition: background .2s;
 }
 .lb__arrow:hover { background: #fff; }
-.lb__arrow--prev { left: calc(5 * var(--v)); }
-.lb__arrow--next { right: calc(5 * var(--v)); }
+.lb__arrow--prev { left: calc(3 * var(--v)); }
+.lb__arrow--next { right: calc(3 * var(--v)); }
 .lb__arrow::before {
   content: "";
   position: absolute;
   top: 50%;
   left: 50%;
   border-style: solid;
-  border-width: calc(12 * var(--v)) calc(15 * var(--v)) calc(12 * var(--v)) 0;
+  border-width: max(calc(8 * var(--v)), 5px) max(calc(10 * var(--v)), 6px) max(calc(8 * var(--v)), 5px) 0;
   border-color: transparent #555 transparent transparent;
   transform: translate(-60%, -50%);
 }
 .lb__arrow--next::before {
-  border-width: calc(12 * var(--v)) 0 calc(12 * var(--v)) calc(15 * var(--v));
+  border-width: max(calc(8 * var(--v)), 5px) 0 max(calc(8 * var(--v)), 5px) max(calc(10 * var(--v)), 6px);
   border-color: transparent transparent transparent #555;
   transform: translate(-40%, -50%);
 }
