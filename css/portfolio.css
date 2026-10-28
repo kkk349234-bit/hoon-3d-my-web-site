@@ -1,0 +1,64 @@
+/*
+  [portfolio] 페이지 — 시안(본문 폭 1390px) 기준 픽셀 값을 calc(N * var(--q))로 적었습니다.
+*/
+.frame { --q: calc(100cqw / 1390); }
+
+.pf {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-top: calc(150 * var(--q));
+  /* 위·아래는 어둡게, 게시물 영역은 한 톤 밝게 */
+  background: linear-gradient(180deg,
+    #141414 0, #141414 calc(240 * var(--q)),
+    #282828 calc(320 * var(--q)), #282828 calc(100% - calc(280 * var(--q))),
+    #141414 calc(100% - calc(120 * var(--q))));
+}
+
+.pf__title {
+  text-align: center;
+  font-family: "Oswald", "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: max(calc(84 * var(--q)), 40px);
+  line-height: 1;
+  letter-spacing: 0.005em;
+  color: #fff;
+}
+
+.pf__grid {
+  margin-top: calc(96 * var(--q));
+  padding: 0 calc(23 * var(--q)) 0 calc(21 * var(--q));
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: calc(19 * var(--q));
+  row-gap: calc(14 * var(--q));
+}
+.pf__card { display: block; }
+.pf__thumb {
+  aspect-ratio: 436 / 245;
+  overflow: hidden;
+  background: #1c1c1c;
+}
+.pf__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .6s cubic-bezier(.2, .7, .1, 1), filter .4s;
+}
+.pf__label {
+  display: block;
+  margin-top: calc(8 * var(--q));
+  font-size: max(calc(19 * var(--q)), 12px);
+  letter-spacing: -0.01em;
+  color: #f2f2f2;
+  transition: color .3s;
+}
+.pf__card:hover .pf__thumb img { transform: scale(1.04); }
+.pf__card:hover .pf__label { color: #fff; }
+.pf__card:focus-visible { outline: 2px solid #f2f2f2; outline-offset: 4px; }
+
+.nav a[aria-current="page"] { color: #e6e6e6; }
+
+@media (max-width: 700px) {
+  .pf__grid { grid-template-columns: 1fr 1fr; column-gap: 10px; row-gap: 16px; padding: 0 12px; }
+}

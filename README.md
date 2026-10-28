@@ -7,6 +7,9 @@
 index.html          페이지 마크업 (텍스트·섹션 수정)
 css/style.css       스타일 (색상은 상단 :root 변수)
 project.html        "More view" 상세 페이지 (project.html?p=driver | iron | sunglasses)
+portfolio.html      [portfolio] 프로젝트 목록 (js/projects.js 순서대로 자동 생성)
+css/portfolio.css   [portfolio] 페이지 스타일
+js/portfolio.js     프로젝트 목록 생성
 info.html           [info] 자기소개 페이지 (영문 본문, 마우스를 올리면 한국어)
 css/info.css        [info] 페이지 스타일
 js/info.js          자기소개 펼치기(▼) · 한/영 전환

@@ -3,10 +3,13 @@
 //   영상 상세페이지: video(영상 경로) + poster(재생 전 이미지)
 //   이미지 상세페이지: cover(맨 위 메인 이미지) — 툴바 색이 배경 밝기에 따라 자동 전환됩니다
 // images: 영상(또는 메인 이미지) 아래 이미지 목록. 이 배열 순서대로 표시됩니다.
+// label·thumb: [portfolio] 페이지 목록에 표시할 이름과 대표 이미지 (목록 순서 = 이 파일의 순서)
 // thumbs: true면 목록·툴바에 같은 폴더 thumbs/의 같은 이름 썸네일을 사용합니다.
 window.PROJECTS = {
   driver: {
     title: 'BLACK T 10.5 Driver',
+    label: '10.5 DRIVER',
+    thumb: 'assets/images/driver.webp',
     video: 'assets/projects/driver/video.mp4',
     poster: 'assets/projects/driver/poster.webp',
     thumbs: true,
@@ -37,6 +40,8 @@ window.PROJECTS = {
   },
   iron: {
     title: 'BLACK T T-1 iron',
+    label: 'T-1 IRON',
+    thumb: 'assets/images/iron.webp',
     video: 'assets/projects/iron/video.mp4',
     poster: 'assets/projects/iron/poster.webp',
     thumbs: true,
@@ -69,6 +74,8 @@ window.PROJECTS = {
   },
   sunglasses: {
     title: 'B4 Sunglasses',
+    label: 'B4 SUNGLASSES',
+    thumb: 'assets/images/sunglasses.webp',
     cover: 'assets/projects/sunglasses/01.webp',
     thumbs: true,
     images: [
