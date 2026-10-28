@@ -25,18 +25,13 @@
   color: #fff;
 }
 
-/* ---------- 게시물 수 · 보기 전환 ---------- */
+/* ---------- 보기 전환 ---------- */
 .pf__bar {
   margin: calc(8 * var(--q)) calc(23 * var(--q)) 0 calc(21 * var(--q));
   height: max(calc(40 * var(--q)), 30px);
   display: flex;
   align-items: center;
-  justify-content: space-between;
-}
-.pf__count {
-  font-size: max(calc(13 * var(--q)), 11px);
-  letter-spacing: 0.08em;
-  color: #7d7d7d;
+  justify-content: flex-end;
 }
 .pf__view {
   display: flex;
@@ -79,61 +74,31 @@
 .pf__card { display: block; animation: pfIn .5s cubic-bezier(.2, .7, .1, 1) both; animation-delay: var(--d, 0s); }
 @keyframes pfIn { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
 
+/* 썸네일은 16:9 고정, 제공 이미지 비율이 다르면 정중앙 기준으로 맞춤 */
 .pf__thumb {
   position: relative;
   aspect-ratio: 436 / 245;
   overflow: hidden;
   background: #1c1c1c;
 }
-.pf__thumb img,
-.pf__thumb video {
+.pf__thumb img {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: 50% 50%;
 }
 .pf__thumb img { transition: transform .6s cubic-bezier(.2, .7, .1, 1); }
-.pf__thumb video { opacity: 0; transition: opacity .35s; pointer-events: none; }
-.pf__card.is-previewing .pf__thumb video { opacity: 1; }
 .pf__card:hover .pf__thumb img { transform: scale(1.04); }
 
-/* 영상 게시물 표시 */
-.pf__badge {
-  position: absolute;
-  left: calc(10 * var(--q));
-  bottom: calc(10 * var(--q));
-  width: max(calc(26 * var(--q)), 20px);
-  height: max(calc(26 * var(--q)), 20px);
-  border-radius: 50%;
-  background: rgba(10, 10, 10, .55);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  display: grid;
-  place-items: center;
-  transition: opacity .3s;
-}
-.pf__badge svg { width: 42%; height: 42%; fill: #f2f2f2; transform: translateX(8%); }
-.pf__card.is-previewing .pf__badge { opacity: 0; }
-
-.pf__info {
-  margin-top: calc(9 * var(--q));
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 12px;
-}
 .pf__label {
+  display: block;
+  margin-top: calc(9 * var(--q));
   font-size: max(calc(19 * var(--q)), 12px);
   letter-spacing: -0.01em;
   color: #f2f2f2;
   transition: color .3s;
-}
-.pf__meta {
-  flex: none;
-  font-size: max(calc(12 * var(--q)), 10px);
-  letter-spacing: 0.08em;
-  color: #7d7d7d;
 }
 .pf[data-cols="2"] .pf__label { font-size: max(calc(22 * var(--q)), 13px); }
 .pf[data-cols="4"] .pf__label { font-size: max(calc(16 * var(--q)), 12px); }
@@ -146,7 +111,6 @@
   .pf__view { display: none; }
   .pf .pf__grid, .pf[data-cols] .pf__grid { --cols: 2; column-gap: 10px; row-gap: 16px; padding: 0 12px; }
   .pf__bar { margin: 12px 12px 0; }
-  .pf__meta { display: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {

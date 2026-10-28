@@ -1,15 +1,16 @@
-// 프로젝트 데이터 — 상세 페이지(project.html?p=<key>)에서 사용합니다.
+// 프로젝트 데이터 — [portfolio] 목록과 상세 페이지(project.html?p=<key>)에서 사용합니다.
+// 목록 순서 = 이 파일의 순서입니다.
 // 상세페이지는 두 종류입니다.
 //   영상 상세페이지: video(영상 경로) + poster(재생 전 이미지)
 //   이미지 상세페이지: cover(맨 위 메인 이미지) — 툴바 색이 배경 밝기에 따라 자동 전환됩니다
+// label·thumb: [portfolio] 목록에 표시할 제목과 썸네일(16:9)
 // images: 영상(또는 메인 이미지) 아래 이미지 목록. 이 배열 순서대로 표시됩니다.
-// label·thumb: [portfolio] 페이지 목록에 표시할 이름과 대표 이미지 (목록 순서 = 이 파일의 순서)
 // thumbs: true면 목록·툴바에 같은 폴더 thumbs/의 같은 이름 썸네일을 사용합니다.
 window.PROJECTS = {
   driver: {
     title: 'BLACK T 10.5 Driver',
     label: '10.5 DRIVER',
-    thumb: 'assets/images/driver.webp',
+    thumb: 'assets/projects/driver/card.webp',
     video: 'assets/projects/driver/video.mp4',
     poster: 'assets/projects/driver/poster.webp',
     thumbs: true,
@@ -41,7 +42,7 @@ window.PROJECTS = {
   iron: {
     title: 'BLACK T T-1 iron',
     label: 'T-1 IRON',
-    thumb: 'assets/images/iron.webp',
+    thumb: 'assets/projects/iron/card.webp',
     video: 'assets/projects/iron/video.mp4',
     poster: 'assets/projects/iron/poster.webp',
     thumbs: true,
@@ -72,13 +73,35 @@ window.PROJECTS = {
       'assets/projects/iron/24.webp',
     ],
   },
+  t10: {
+    title: 'BLACK T T-10',
+    label: 'T-10',
+    thumb: 'assets/projects/t10/card.webp',
+    video: 'assets/projects/t10/video.mp4',
+    poster: 'assets/projects/t10/poster.webp',
+    thumbs: true,
+    images: [
+      'assets/projects/t10/01.webp',
+      'assets/projects/t10/02.webp',
+      'assets/projects/t10/03.webp',
+      'assets/projects/t10/04.webp',
+      'assets/projects/t10/05.webp',
+      'assets/projects/t10/06.webp',
+      'assets/projects/t10/07.webp',
+      'assets/projects/t10/08.webp',
+      'assets/projects/t10/09.webp',
+      'assets/projects/t10/10.webp',
+      'assets/projects/t10/11.webp',
+    ],
+  },
   sunglasses: {
     title: 'B4 Sunglasses',
     label: 'B4 SUNGLASSES',
-    thumb: 'assets/images/sunglasses.webp',
+    thumb: 'assets/projects/sunglasses/card.webp',
     cover: 'assets/projects/sunglasses/01.webp',
     thumbs: true,
     images: [
+      'assets/projects/sunglasses/01.webp',
       'assets/projects/sunglasses/02.webp',
       'assets/projects/sunglasses/03.webp',
       'assets/projects/sunglasses/04.webp',
@@ -102,6 +125,29 @@ window.PROJECTS = {
       'assets/projects/sunglasses/22.webp',
       'assets/projects/sunglasses/23.webp',
       'assets/projects/sunglasses/24.webp',
+    ],
+  },
+  steel: {
+    title: 'PURE STEEL',
+    label: 'PURE STEEL',
+    thumb: 'assets/projects/steel/card.webp',
+    cover: 'assets/projects/steel/cover.webp',
+    thumbs: true,
+    images: [
+      'assets/projects/steel/01.webp',
+      'assets/projects/steel/02.webp',
+      'assets/projects/steel/03.webp',
+      'assets/projects/steel/04.webp',
+      'assets/projects/steel/05.webp',
+      'assets/projects/steel/06.webp',
+      'assets/projects/steel/07.webp',
+      'assets/projects/steel/08.webp',
+      'assets/projects/steel/09.webp',
+      'assets/projects/steel/10.webp',
+      'assets/projects/steel/11.webp',
+      'assets/projects/steel/12.webp',
+      'assets/projects/steel/13.webp',
+      'assets/projects/steel/14.webp',
     ],
   },
 };
