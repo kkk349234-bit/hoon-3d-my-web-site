@@ -28,8 +28,25 @@
         </nav>
       </header>
 
-      <main class="pf">
+      <main class="pf" data-cols="3">
         <h1 class="pf__title">PROJECTS</h1>
+
+        <div class="pf__bar">
+          <p class="pf__count"></p>
+          <!-- 2 / 3 / 4열 보기 전환 -->
+          <div class="pf__view" role="group" aria-label="보기 방식">
+            <button type="button" data-cols="2" aria-label="2열로 보기" aria-pressed="false">
+              <svg viewBox="0 0 20 20"><rect x="2" y="3" width="7" height="14" rx="1" /><rect x="11" y="3" width="7" height="14" rx="1" /></svg>
+            </button>
+            <button type="button" data-cols="3" aria-label="3열로 보기" aria-pressed="true">
+              <svg viewBox="0 0 20 20"><rect x="1.5" y="3" width="4.6" height="14" rx="1" /><rect x="7.7" y="3" width="4.6" height="14" rx="1" /><rect x="13.9" y="3" width="4.6" height="14" rx="1" /></svg>
+            </button>
+            <button type="button" data-cols="4" aria-label="4열로 보기" aria-pressed="false">
+              <svg viewBox="0 0 20 20"><rect x="1" y="3" width="3.6" height="14" rx=".8" /><rect x="5.8" y="3" width="3.6" height="14" rx=".8" /><rect x="10.6" y="3" width="3.6" height="14" rx=".8" /><rect x="15.4" y="3" width="3.6" height="14" rx=".8" /></svg>
+            </button>
+          </div>
+        </div>
+
         <!-- js/projects.js 순서대로 게시물이 채워집니다 -->
         <ul class="pf__grid"></ul>
 

@@ -7,11 +7,11 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  padding-top: calc(150 * var(--q));
+  padding-top: calc(124 * var(--q));
   /* 위·아래는 어둡게, 게시물 영역은 한 톤 밝게 */
   background: linear-gradient(180deg,
-    #141414 0, #141414 calc(240 * var(--q)),
-    #282828 calc(320 * var(--q)), #282828 calc(100% - calc(280 * var(--q))),
+    #141414 0, #151515 calc(140 * var(--q)),
+    #282828 calc(240 * var(--q)), #282828 calc(100% - calc(280 * var(--q))),
     #141414 calc(100% - calc(120 * var(--q))));
 }
 
@@ -19,46 +19,136 @@
   text-align: center;
   font-family: "Oswald", "Montserrat", sans-serif;
   font-weight: 600;
-  font-size: max(calc(84 * var(--q)), 40px);
+  font-size: max(calc(45 * var(--q)), 30px);
   line-height: 1;
-  letter-spacing: 0.005em;
+  letter-spacing: 0.01em;
   color: #fff;
 }
 
+/* ---------- 게시물 수 · 보기 전환 ---------- */
+.pf__bar {
+  margin: calc(8 * var(--q)) calc(23 * var(--q)) 0 calc(21 * var(--q));
+  height: max(calc(40 * var(--q)), 30px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.pf__count {
+  font-size: max(calc(13 * var(--q)), 11px);
+  letter-spacing: 0.08em;
+  color: #7d7d7d;
+}
+.pf__view {
+  display: flex;
+  gap: calc(4 * var(--q));
+  padding: calc(4 * var(--q));
+  border: 1px solid #2f2f2f;
+  border-radius: calc(10 * var(--q));
+  background: rgba(255, 255, 255, .03);
+}
+.pf__view button {
+  width: max(calc(32 * var(--q)), 26px);
+  height: max(calc(28 * var(--q)), 22px);
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: calc(6 * var(--q));
+  background: transparent;
+  color: #6f6f6f;
+  cursor: pointer;
+  transition: color .2s, background .2s;
+}
+.pf__view svg { width: 62%; height: 62%; fill: currentColor; }
+.pf__view button:hover { color: #cfcfcf; }
+.pf__view button[aria-pressed="true"] { color: #fff; background: rgba(255, 255, 255, .1); }
+.pf__view button:focus-visible { outline: 2px solid #f2f2f2; outline-offset: 1px; }
+
+/* ---------- 게시물 그리드 ---------- */
 .pf__grid {
-  margin-top: calc(96 * var(--q));
+  --cols: 3;
+  margin-top: calc(23 * var(--q));
   padding: 0 calc(23 * var(--q)) 0 calc(21 * var(--q));
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(var(--cols), 1fr);
   column-gap: calc(19 * var(--q));
-  row-gap: calc(14 * var(--q));
+  row-gap: calc(22 * var(--q));
 }
-.pf__card { display: block; }
+.pf[data-cols="2"] .pf__grid { --cols: 2; column-gap: calc(24 * var(--q)); row-gap: calc(30 * var(--q)); }
+.pf[data-cols="4"] .pf__grid { --cols: 4; column-gap: calc(14 * var(--q)); row-gap: calc(18 * var(--q)); }
+
+.pf__card { display: block; animation: pfIn .5s cubic-bezier(.2, .7, .1, 1) both; animation-delay: var(--d, 0s); }
+@keyframes pfIn { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+
 .pf__thumb {
+  position: relative;
   aspect-ratio: 436 / 245;
   overflow: hidden;
   background: #1c1c1c;
 }
-.pf__thumb img {
+.pf__thumb img,
+.pf__thumb video {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform .6s cubic-bezier(.2, .7, .1, 1), filter .4s;
+}
+.pf__thumb img { transition: transform .6s cubic-bezier(.2, .7, .1, 1); }
+.pf__thumb video { opacity: 0; transition: opacity .35s; pointer-events: none; }
+.pf__card.is-previewing .pf__thumb video { opacity: 1; }
+.pf__card:hover .pf__thumb img { transform: scale(1.04); }
+
+/* 영상 게시물 표시 */
+.pf__badge {
+  position: absolute;
+  left: calc(10 * var(--q));
+  bottom: calc(10 * var(--q));
+  width: max(calc(26 * var(--q)), 20px);
+  height: max(calc(26 * var(--q)), 20px);
+  border-radius: 50%;
+  background: rgba(10, 10, 10, .55);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  display: grid;
+  place-items: center;
+  transition: opacity .3s;
+}
+.pf__badge svg { width: 42%; height: 42%; fill: #f2f2f2; transform: translateX(8%); }
+.pf__card.is-previewing .pf__badge { opacity: 0; }
+
+.pf__info {
+  margin-top: calc(9 * var(--q));
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
 }
 .pf__label {
-  display: block;
-  margin-top: calc(8 * var(--q));
   font-size: max(calc(19 * var(--q)), 12px);
   letter-spacing: -0.01em;
   color: #f2f2f2;
   transition: color .3s;
 }
-.pf__card:hover .pf__thumb img { transform: scale(1.04); }
+.pf__meta {
+  flex: none;
+  font-size: max(calc(12 * var(--q)), 10px);
+  letter-spacing: 0.08em;
+  color: #7d7d7d;
+}
+.pf[data-cols="2"] .pf__label { font-size: max(calc(22 * var(--q)), 13px); }
+.pf[data-cols="4"] .pf__label { font-size: max(calc(16 * var(--q)), 12px); }
 .pf__card:hover .pf__label { color: #fff; }
 .pf__card:focus-visible { outline: 2px solid #f2f2f2; outline-offset: 4px; }
 
 .nav a[aria-current="page"] { color: #e6e6e6; }
 
 @media (max-width: 700px) {
-  .pf__grid { grid-template-columns: 1fr 1fr; column-gap: 10px; row-gap: 16px; padding: 0 12px; }
+  .pf__view { display: none; }
+  .pf .pf__grid, .pf[data-cols] .pf__grid { --cols: 2; column-gap: 10px; row-gap: 16px; padding: 0 12px; }
+  .pf__bar { margin: 12px 12px 0; }
+  .pf__meta { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pf__card { animation: none; }
 }
