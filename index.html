@@ -16,9 +16,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;800&display=swap" rel="stylesheet" />
+  <link rel="preload" as="image" href="assets/images/intro.webp" />
+  <!-- 인트로: 이번 세션에 아직 안 봤을 때만 표시 -->
+  <script>try { if (!sessionStorage.getItem('intro-seen')) document.documentElement.classList.add('intro-on'); } catch (e) { document.documentElement.classList.add('intro-on'); }</script>
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
+  <!-- INTRO -->
+  <div class="intro" aria-hidden="true"><img src="assets/images/intro.webp" alt="" fetchpriority="high" /></div>
+
   <div class="page" id="top">
     <div class="frame">
       <header class="site-header">
@@ -99,6 +105,7 @@
     </div>
   </div>
 
+  <script src="js/intro.js"></script>
   <script src="js/protect.js"></script>
 </body>
 </html>
