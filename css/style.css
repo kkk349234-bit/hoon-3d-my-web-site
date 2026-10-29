@@ -67,11 +67,13 @@ ul { list-style: none; }
 .nav {
   position: absolute;
   top: 0;
-  left: calc(240 * var(--u));
+  left: 50%;
+  transform: translateX(-50%);
   height: 100%;
   display: flex;
   align-items: center;
-  gap: calc(20 * var(--u));
+  gap: calc(34 * var(--u));
+  white-space: nowrap;
   font-size: calc(9 * var(--u));
 }
 .nav a { color: #8f8f8f; transition: color .25s; }

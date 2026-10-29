@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Video — Kim sang hoon</title>
+  <meta name="description" content="Kim Sang Hoon — 3D . AI Design video works" />
+  <meta name="theme-color" content="#090909" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/project.css" />
+  <link rel="stylesheet" href="css/video.css" />
+</head>
+<body>
+  <div class="page">
+    <div class="frame">
+      <header class="site-header">
+        <a class="logo" href="index.html" aria-label="Home">
+          <img src="assets/logo.png" alt="" />
+        </a>
+        <nav class="nav">
+          <a href="portfolio.html">[portfolio]</a>
+          <a href="video.html" aria-current="page">[video]</a>
+          <a href="info.html">[info]</a>
+        </nav>
+      </header>
+
+      <main class="vd">
+        <h1 class="vd__title">VIDEO</h1>
+        <!-- js/videos.js 순서대로 채워집니다 -->
+        <ul class="vd__grid"></ul>
+
+        <footer class="detail__footer">
+          <hr />
+          <p>Design. Create. Inspire. Exploring the intersection of 3D design, motion, and visual storytelling. © 2026 Kim sang hoon . All rights reserved.</p>
+        </footer>
+      </main>
+    </div>
+  </div>
+
+  <!-- 영상 재생 화면 -->
+  <div class="vm" hidden>
+    <div class="vm__box">
+      <div class="player is-paused">
+        <video playsinline preload="metadata" controlslist="nodownload noplaybackrate noremoteplayback" disablepictureinpicture disableremoteplayback></video>
+        <h2 class="player__title"></h2>
+        <button class="player__big" type="button" aria-label="재생">
+          <svg viewBox="0 0 24 24"><path d="M7 4.5v15l12.5-7.5z" /></svg>
+        </button>
+        <div class="player__ui">
+          <div class="player__progress" role="slider" aria-label="재생 위치" tabindex="0">
+            <div class="player__buffer"></div>
+            <div class="player__fill"></div>
+            <div class="player__thumb"></div>
+          </div>
+          <div class="player__controls">
+            <button class="ctl" data-act="play" type="button" aria-label="재생/일시정지">
+              <svg class="i-play" viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z" /></svg>
+              <svg class="i-pause" viewBox="0 0 24 24"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z" /></svg>
+            </button>
+            <button class="ctl" data-act="back" type="button" aria-label="5초 뒤로">
+              <svg viewBox="0 0 24 24"><path d="M6 5h2.5v14H6zM19 5v14L9 12z" /></svg>
+            </button>
+            <button class="ctl" data-act="fwd" type="button" aria-label="5초 앞으로">
+              <svg viewBox="0 0 24 24"><path d="M15.5 5H18v14h-2.5zM5 5v14l10-7z" /></svg>
+            </button>
+            <button class="ctl" data-act="mute" type="button" aria-label="소리">
+              <svg class="i-vol" viewBox="0 0 24 24"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z" /><path d="M15 8.5a5 5 0 0 1 0 7M17.5 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" /></svg>
+              <svg class="i-mute" viewBox="0 0 24 24"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z" /><path d="M15.5 9.5l5 5M20.5 9.5l-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" /></svg>
+            </button>
+            <div class="player__volume" role="slider" aria-label="볼륨" tabindex="0">
+              <div class="player__volfill"></div>
+            </div>
+            <span class="player__time"><span class="t-cur">0:00</span> / <span class="t-dur">0:00</span></span>
+            <button class="ctl" data-act="full" type="button" aria-label="전체화면">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 9.5V5h4.5M14.5 5H19v4.5M19 14.5V19h-4.5M9.5 19H5v-4.5" /></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/videos.js"></script>
+  <script src="js/player.js"></script>
+  <script src="js/video.js"></script>
+  <script src="js/protect.js"></script>
+</body>
+</html>
