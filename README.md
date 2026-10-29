@@ -10,6 +10,12 @@ project.html        "More view" 상세 페이지 (project.html?p=driver | iron |
 portfolio.html      [portfolio] 프로젝트 목록 (js/projects.js 순서대로 자동 생성)
 css/portfolio.css   [portfolio] 페이지 스타일
 js/portfolio.js     프로젝트 목록 생성
+video.html          [video] 영상 목록 (2열, 마우스 올리면 미리보기, 클릭하면 중앙 재생)
+css/video.css       [video] 페이지 스타일
+js/videos.js        [video] 데이터 (순서 = 표시 순서)
+js/video.js         [video] 목록·재생 동작
+js/player.js        공용 영상 플레이어
+assets/videos/      [video] 영상(video.mp4)·미리보기(preview.mp4)·썸네일(thumb.webp)
 info.html           [info] 자기소개 페이지 (영문 본문, 마우스를 올리면 한국어)
 css/info.css        [info] 페이지 스타일
 js/info.js          자기소개 펼치기(▼) · 한/영 전환
