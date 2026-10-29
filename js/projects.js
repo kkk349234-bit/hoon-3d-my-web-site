@@ -36,7 +36,6 @@ window.PROJECTS = {
       'assets/projects/driver/19.webp',
       'assets/projects/driver/20.webp',
       'assets/projects/driver/21.webp',
-      'assets/projects/driver/22.webp',
     ],
   },
   iron: {
@@ -216,8 +215,8 @@ window.PROJECTS = {
     ],
   },
   putter: {
-    title: 'PUTER',
-    label: 'PUTER',
+    title: 'PUTTER',
+    label: 'PUTTER',
     thumb: 'assets/projects/putter/card.webp',
     cover: 'assets/projects/putter/cover.webp',
     thumbs: true,
