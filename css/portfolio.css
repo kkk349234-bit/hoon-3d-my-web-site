@@ -24,10 +24,33 @@
   letter-spacing: 0.01em;
   color: #fff;
 }
+/* 제목 아래 부제: 넓은 자간 + 양옆 가는 선 */
+.pf__sub {
+  margin-top: calc(14 * var(--q));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: calc(16 * var(--q));
+  font-size: max(calc(12.5 * var(--q)), 10px);
+  font-weight: 500;
+  letter-spacing: 0.42em;
+  color: #9a9a9a;
+  white-space: nowrap;
+}
+.pf__sub::before,
+.pf__sub::after {
+  content: "";
+  width: max(calc(40 * var(--q)), 24px);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #6a6a6a);
+}
+.pf__sub::after { background: linear-gradient(90deg, #6a6a6a, transparent); }
+/* 자간 때문에 생기는 오른쪽 여백 보정 */
+.pf__sub { padding-left: 0.42em; }
 
 /* ---------- 보기 전환 ---------- */
 .pf__bar {
-  margin: calc(8 * var(--q)) calc(23 * var(--q)) 0 calc(21 * var(--q));
+  margin: calc(-6 * var(--q)) calc(23 * var(--q)) 0 calc(21 * var(--q));
   height: max(calc(40 * var(--q)), 30px);
   display: flex;
   align-items: center;
